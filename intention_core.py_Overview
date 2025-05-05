@@ -1,0 +1,14 @@
+File: intention_core.py
+
+intention_core.py defines the Intention Core, which serves as the agent’s inner motivational engine. Its role is to synthesize active goals, recent perceptions, and internal field states into focused intention vectors.
+
+Key operations include:
+	•	Generating an active intention vector \mathbf{I} \in \mathbb{R}^n as a weighted combination of current goals and field curvature gradients.
+	•	Adjusting intention flow in real-time based on system resonance and goal proximity.
+	•	Projecting intention back into the field as an influencing force:
+
+\mathbf{F}_{\text{int}} = \nabla \cdot \left( m(\mathbf{I}) \cdot \frac{1}{d(\mathbf{x}, \mathbf{I})^2} \right)
+
+This force reshapes the semantic field locally, allowing the agent to selectively amplify or suppress meaning vectors aligned or misaligned with its intention.
+
+The Intention Core embodies directional cognition: it aligns the semantic dynamics of the agent with its current motivational configuration.

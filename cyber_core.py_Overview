@@ -1,0 +1,20 @@
+File: cyber_core.py
+
+The cyber_core.py module defines the Cybernetic Core, a subsystem responsible for regulating the agent’s internal control logic, attention focus, and field-level resource balancing. It bridges low-level field dynamics with goal-aligned action potential, operating analogously to a nervous system regulating energetic flow within a body.
+
+Key features of this module include:
+	•	Tracking the energetic budget of the semantic field.
+	•	Dynamically shifting “focus sectors” of cognition toward areas of high curvature or gravity.
+	•	Suppressing or enhancing regions of the tensor field via feedback loops.
+
+Mathematically, this module acts as a control function C(t) over the field evolution:
+
+\frac{\partial T}{\partial t} = \mathcal{F}(T, \mathcal{K}, F) + C(t)
+
+where C(t) may amplify or dampen certain trajectories based on cognitive resonance or urgency encoded in the Intention Core.
+
+The Cyber Core also plays a vital role in resource minimization, redirecting semantic flow to reduce unnecessary processing by optimizing cognitive path length:
+
+\text{Effort} = \int_{\gamma} \left( \frac{1}{\|\mathbf{v}_{\text{goal}} - \mathbf{v}_t\| + \epsilon} \right) dt
+
+This module ensures the cognitive system remains economical, efficient, and coherent under changing sensory and goal-driven perturbations.

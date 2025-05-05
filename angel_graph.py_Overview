@@ -1,0 +1,24 @@
+angel_graph.py
+The angel_graph.py module constructs and maintains a dynamic semantic-intentional graph based on interactions between goals, vectors, and actions within the tensor field.
+
+Each node in the graph represents:
+	•	A semantic vector (concept, perception, or action),
+	•	Or a goal/intention structure.
+
+Edges encode:
+	•	Influence (gravitational, intentional),
+	•	Temporal sequences,
+	•	Semantic resonance.
+
+This graph provides an externalized representation of cognitive structure:
+
+G = (V, E), \quad E = \{ (\mathbf{v}_i, \mathbf{v}j, w{ij}) \}
+
+Where w_{ij} reflects gravitational pull or co-activation resonance.
+
+The module supports:
+	•	Visualization of semantic flows,
+	•	Extraction of influence pathways,
+	•	Detection of cognitive bottlenecks or dead ends.
+
+angel_graph.py allows researchers or agents to inspect and debug cognitive topology in real time, creating a window into the otherwise invisible dynamics of Tensor Gravity Cognition.

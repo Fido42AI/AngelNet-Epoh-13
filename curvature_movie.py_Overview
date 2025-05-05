@@ -1,0 +1,18 @@
+File: curvature_movie.py
+
+The curvature_movie.py module defines the evolution of curvature over time in the semantic tensor field. It simulates how goals reshape the geometry of cognition dynamically, forming new attractors and dissipating outdated intentions.
+
+This module:
+	•	Maintains a time-indexed record of curvature tensors \mathcal{K}_t,
+	•	Propagates curvature changes across the field through a diffusion-like model:
+
+\mathcal{K}_{t+1}(\mathbf{x}) = \mathcal{K}_t(\mathbf{x}) + \Delta t \cdot D \nabla^2 \mathcal{K}_t(\mathbf{x}) + S(\mathbf{x}, t)
+
+Where:
+	•	D is a diffusion constant,
+	•	S(\mathbf{x}, t) represents sources (active goals),
+	•	\nabla^2 is the Laplacian operator over the tensor space.
+
+The curvature field affects geodesics of meaning and alters the semantic gravity landscape. The result is a temporal “movie” of mental topology shifts.
+
+This module allows the system to track long-term motivational topography and adapt to persistent environmental or internal stimuli, encoding memory-like traces in field shape.

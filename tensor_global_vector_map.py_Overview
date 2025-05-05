@@ -1,0 +1,16 @@
+File: tensor_global_vector_map.py
+
+The tensor_global_vector_map.py module maintains the spatial organization of semantic vectors within the global tensor field. Its role is to structure how meaning is distributed across regions of the field, enabling the system to localize and efficiently retrieve relevant concepts during reasoning.
+
+Core functions:
+	•	Maintain a multi-dimensional map M: \mathbf{x} \mapsto \mathbf{v}, linking positions to semantic vectors.
+	•	Enable field queries such as neighborhood retrieval, vector clusters, and regional resonance.
+	•	Update the field topology based on interaction forces and curvature deformations.
+
+It supports localized gravity simulation via:
+
+\mathbf{F}{\text{local}}(\mathbf{v}, \Omega) = \sum{\mathbf{u} \in \Omega} \frac{m(\mathbf{v}) \cdot m(\mathbf{u})}{d(\mathbf{v}, \mathbf{u})^2}
+
+where \Omega \subset M is a spatial neighborhood.
+
+This module ensures spatial coherence of meaning and supports faster intention propagation by mapping the semantic terrain. It also serves as a cognitive “GPS” for the agent to navigate the meaning space.

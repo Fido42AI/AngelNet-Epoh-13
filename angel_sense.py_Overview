@@ -1,0 +1,16 @@
+File: angel_sense.py
+
+The angel_sense.py module implements the system’s perceptual interface: the Angel Sense. This module is responsible for translating external sensory input into high-dimensional semantic vectors and injecting them into the tensor field for further processing.
+
+The process is as follows:
+	•	Raw sensory or symbolic data is received (e.g., simulated perception, input signal).
+	•	Data is passed to the Universal Transformer, which encodes it into semantic vectors \mathbf{v}_{\text{sense}} \in \mathbb{R}^n.
+	•	These vectors are introduced into the Tensor Field, where they interact with existing intention and memory structures.
+
+A key function is computing the “gravitational relevance” of perception relative to goals:
+
+R(\mathbf{v}{\text{sense}}, \mathbf{g}) = \frac{m(\mathbf{v}{\text{sense}}) \cdot m(\mathbf{g})}{d(\mathbf{v}_{\text{sense}}, \mathbf{g})^2}
+
+This relevance score determines how strongly a sensed object perturbs or aligns with current motivational fields.
+
+Angel Sense plays a crucial role in initiating field perturbation, allowing external reality to reshape internal semantic geometry. It supports real-time interaction by ensuring that perception feeds directly into the ongoing dynamics of Tensor Gravity.

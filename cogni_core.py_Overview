@@ -1,0 +1,13 @@
+File: cogni_core.py
+
+The cogni_core.py file defines the foundational cognitive engine of AngelNet-Epoh-13. Known as the Cognitive Core, this module is responsible for managing and evolving the global semantic tensor field that underpins the agent’s perception, memory, and decision-making processes.
+
+Inside cogni_core.py, the core tasks include:
+	•	Maintaining the Tensor Field, a dynamic space where semantic vectors live and interact.
+	•	Applying gravitational forces between vectors based on semantic mass and proximity (Tensor Gravity mechanism).
+	•	Updating the curvature of the field according to active goals, effectively reshaping semantic trajectories.
+	•	Integrating sensory inputs from Angel Sense and transforming them into semantic updates.
+
+The Cognitive Core also handles energy conservation principles within the field, ensuring that the agent’s reasoning follows geodesic paths (minimal energy routes) defined by the local curvature induced by goals.
+
+This module is essential because it operationalizes the idea of cognition as field dynamics, allowing for emergent, meaning-driven behavior rather than rigid token-based responses. It bridges semantic mass, gravitational interaction, and field deformation into a unified operational structure.

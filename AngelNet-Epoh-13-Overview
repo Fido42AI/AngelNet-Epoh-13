@@ -1,0 +1,47 @@
+AngelNet-Epoh-13: Gravitational Tensor Cognition System Overview
+
+AngelNet-Epoh-13 is a prototype cognitive architecture based on a novel paradigm:
+Gravitational Tensor Cognition (GTC) — where meaning, intention, and action arise from dynamic interactions within a semantic tensor field.
+
+Unlike token-based or symbol-driven systems, AngelNet operates on semantic vectors embedded in a high-dimensional field. These vectors carry semantic mass, and their interactions are governed by gravitational-like forces shaped by goals, intentions, and perceptions. The system does not “process tokens” — it navigates meaning in a physically-inspired space of cognition.
+
+Core Concepts
+	1.	Semantic Vectors — carriers of meaning, perception, or intention, encoded in \mathbb{R}^n.
+	2.	Tensor Field — a dynamic space T: \mathbb{R}^n \to \mathbb{R}^n where vectors evolve and interact.
+	3.	Semantic Gravity — attraction between vectors, proportional to semantic mass and inverse squared distance:
+F = G \cdot \frac{m_i \cdot m_j}{d^2}
+	4.	Goals as Curvature — each goal introduces a deformation in the field, guiding semantic flow.
+	5.	Intention Vector — dynamic synthesis of goals, perception, and internal state.
+	6.	Action Signal — output derived from field deformation aligned with active intentions.
+
+System Modules
+	•	Universal Transformer converts raw input into semantic vectors.
+	•	Global Tensor Field manages distributed semantic states and gravity-like interactions.
+	•	Curvature Movie simulates evolving field curvature due to goals and memory traces.
+	•	Angel Goal Module manages and injects gravitational goals.
+	•	Intention Core produces a focused intention vector influencing the field.
+	•	Cyber Core regulates attention flow and energy conservation.
+	•	Angel Sense transforms sensory input into field-compatible semantic mass.
+	•	Tensor Field Censor suppresses chaotic flows and ensures resonance stability.
+	•	Action Signal Core translates field dynamics into output decisions.
+	•	Meta Core monitors the system and applies metacognitive optimization.
+	•	Angel Graph visualizes the evolving cognitive structure.
+
+Cognition as Geometry
+
+AngelNet doesn’t think in symbols — it bends space.
+Goals create “gravity wells” in the semantic field; perception flows into these wells;
+intentions steer energy along geodesics; and actions emerge from optimal energetic configurations.
+
+This is not a language model or a rule-based system — it’s an attempt to define cognition as field geometry, where understanding = motion through structured space.
+
+Applications and Vision
+
+AngelNet offers an entirely new approach to machine intelligence — one that:
+	•	Prioritizes meaning, not syntax,
+	•	Operates on energy-efficient, intention-driven flow,
+	•	Can be embodied in agents that evolve internal goals over time.
+
+It opens doors to future AGI systems that are goal-aware, internally resonant, and capable of emergent reasoning.
+
+The current prototype provides all architectural scaffolding for this direction and invites further exploration, simulation, and integration with embodied AI systems or autonomous agents.

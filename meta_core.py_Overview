@@ -1,0 +1,19 @@
+File: meta_core.py
+
+The meta_core.py module encapsulates the metacognitive layer of the system: it monitors, adjusts, and evolves the internal logic of the cognitive agent based on performance, field dynamics, and resonance history.
+
+Key functions:
+	•	Evaluate long-term field entropy, energy consumption, and intention alignment.
+	•	Generate meta-goals (goals about goals) and inject them back into the system.
+	•	Adapt the behavior of other modules dynamically (e.g., damping aggressive curvature shifts).
+
+The module includes a feedback-based optimization process:
+
+\Delta \theta = -\eta \cdot \nabla_\theta \mathcal{L}(C, R)
+
+where:
+	•	\theta are internal control parameters,
+	•	\mathcal{L} is a meta-loss based on cognitive cost C and resonance quality R,
+	•	\eta is a learning rate.
+
+meta_core.py is essential for long-term adaptation and emergent learning in a non-symbolic architecture. It makes the system reflect on its own semantic dynamics and evolve accordingly.

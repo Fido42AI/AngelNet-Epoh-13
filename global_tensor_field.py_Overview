@@ -1,0 +1,16 @@
+File: global_tensor_field.py
+
+This module defines the Global Tensor Field, the central substrate of the entire cognitive architecture. It implements the mathematical foundation for representing distributed semantic vectors and their interactions.
+
+Key responsibilities:
+	•	Maintain a global map T: \mathbb{R}^n \rightarrow \mathbb{R}^n of semantic entities,
+	•	Support insertion, decay, and transformation of vectors,
+	•	Track mass and curvature across semantic zones.
+
+It implements gravity-like mechanics via:
+
+\mathbf{F}_{\text{gravity}}(\mathbf{v}i) = \sum{j \neq i} G \cdot \frac{m_i m_j}{d(\mathbf{v}_i, \mathbf{v}j)^2} \cdot \hat{u}{ij}
+
+It also coordinates updates from curvature (from curvature_movie) and intention vectors (from intention_core), acting as the integrative “mental landscape” that gives rise to cognition through vector dynamics.
+
+Without this module, no global cognition can emerge — it is the “space” in which reasoning takes shape.

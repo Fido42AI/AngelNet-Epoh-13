@@ -1,0 +1,16 @@
+File: angel_goal_module.py
+
+The angel_goal_module.py is responsible for managing the agent’s internal system of goals, which are treated not as symbolic instructions but as gravitational sources that reshape the semantic tensor field.
+
+Each goal is encoded as a semantic vector \mathbf{g}_i \in \mathbb{R}^n with associated mass and priority. The module maintains an active set of goals \mathcal{G}, each introducing localized curvature into the field. The effect is formalized as:
+
+\mathcal{K}(\mathbf{x}) = \sum_{\mathbf{g}_i \in \mathcal{G}} \frac{m(\mathbf{g}_i)}{d(\mathbf{x}, \mathbf{g}_i)^2} \cdot P(\mathbf{g}_i)
+
+This curvature alters the geodesic paths of semantic flow, encouraging efficient movement of attention and intention toward relevant areas.
+
+The module also performs:
+	•	Goal evaluation and decay,
+	•	Reweighting based on sensory resonance,
+	•	Injection of new goals into the field.
+
+Ultimately, this module is the primary driver of tensor field deformation, representing cognitive will in geometric form.

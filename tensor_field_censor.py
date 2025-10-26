@@ -11,7 +11,6 @@ import os
 import gzip
 import pickle
 from collections import deque
-import shutil
 
 class TensorFieldCensor:
     """

@@ -47,7 +47,7 @@ class TensorGlobalVectorMap:
             self.base_vector_counts = checkpoint.get('base_vector_counts', {})
             print(f"[TensorGlobalVectorMap] Loaded memory from {self.memory_file}")
         else:
-            print(f"[TensorGlobalVectorMap] No memory file found, starting fresh")
+            print("[TensorGlobalVectorMap] No memory file found, starting fresh")
 
     def load_vector_history(self):
         """

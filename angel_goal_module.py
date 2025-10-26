@@ -5,8 +5,6 @@
 # Updated by: Grok CPT-Chat
 # Version: 13.7.1 (Added initialization)
 
-import torch
-
 class AngelGoalModule:
     """
     AngelGoalModule for managing goals and tracking performance.
@@ -23,18 +21,23 @@ class AngelGoalModule:
         self.current_loss = 0.0
         self.reward = 0.0
     
-    def update(self, accuracy, success):
+    def update(self, accuracy, success, loss=None):
         """
         Update the goal module with the current accuracy and success.
-        
+
         Args:
             accuracy (float): Current accuracy.
             success (bool): Whether the goal was achieved.
+            loss (float, optional): Latest loss value from the learner.
         """
         self.current_accuracy = accuracy
-        self.current_loss = torch.rand(1).item()  # Заглушка для лосса
+        if loss is not None:
+            self.current_loss = float(loss)
+        else:
+            # Fall back to a simple proxy that rewards higher accuracy.
+            self.current_loss = float(1.0 - accuracy)
         self.reward = 1.0 if success else -0.5
-        
+
         print(f"[AngelGoalModule] Updated - Accuracy: {self.current_accuracy:.4f}, Loss: {self.current_loss:.4f}")
         if self.current_accuracy >= self.target_accuracy:
             print(f"[AngelGoalModule] Target accuracy {self.target_accuracy} reached!")

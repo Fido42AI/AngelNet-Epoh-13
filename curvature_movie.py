@@ -5,7 +5,6 @@
 # Updated by: Grok CPT-Chat
 # Version: 13.7.1 (Added output_dim support)
 
-import torch
 import torch.nn.functional as F
 
 class CurvatureMovie:

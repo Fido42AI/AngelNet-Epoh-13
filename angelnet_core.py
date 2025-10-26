@@ -9,6 +9,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 from cyber_core import CyberCore
 from curvature_movie import CurvatureMovie
@@ -28,33 +29,65 @@ class AngelNet(nn.Module):
     """
     AngelNet module combining a neural network with dynamic components.
     """
-    def __init__(self, input_dim=784, hidden_dim=128, output_dim=10, base_lr=0.001):
+    def __init__(
+        self,
+        input_dim=784,
+        hidden_dim=128,
+        output_dim=10,
+        base_lr=0.001,
+        storage_dir=None,
+    ):
         super(AngelNet, self).__init__()
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.output_dim = output_dim
         self.base_lr = base_lr
         self.num_classes = output_dim
-        
-        self.transformer = UniversalTransformer(output_dim=output_dim)
+
+        default_storage = Path.home() / ".cache" / "angelnet_epoh13"
+        self.storage_dir = Path(storage_dir) if storage_dir is not None else default_storage
+        self.storage_dir.mkdir(parents=True, exist_ok=True)
+
+        transformer_archive = self.storage_dir / "transformer_archive"
+        vector_history_file = self.storage_dir / "vector_history.pth.gz"
+        memory_file = self.storage_dir / "class_fields.pth.gz"
+        sense_history_file = self.storage_dir / "sense_history.pth.gz"
+        field_archive_dir = self.storage_dir / "field_archive"
+        ideal_fields_file = self.storage_dir / "ideal_fields.pth.gz"
+
+        transformer_archive.mkdir(parents=True, exist_ok=True)
+        field_archive_dir.mkdir(parents=True, exist_ok=True)
+
+        self.transformer = UniversalTransformer(output_dim=output_dim, archive_dir=str(transformer_archive))
         self.transformer.add_data_type('image', input_dim)
-        
+
         self.fc1 = nn.Linear(output_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
         self.fc3 = nn.Linear(hidden_dim, output_dim)
-        
+
         self.global_field = GlobalTensorField(output_dim=output_dim)
         self.intention = IntentionCore(output_dim=output_dim)
         self.action = ActionSignalLayer(output_dim=output_dim)
-        self.vector_map = TensorGlobalVectorMap(output_dim=output_dim, num_classes=output_dim, gravity_scale=0.1, vector_history_file="vector_history.pth")
+        self.vector_map = TensorGlobalVectorMap(
+            output_dim=output_dim,
+            num_classes=output_dim,
+            gravity_scale=0.1,
+            vector_history_file=str(vector_history_file),
+            memory_file=str(memory_file),
+        )
         self.reflection = MetaReflection(output_dim=output_dim)
         self.graph = AngelGraph(num_nodes=32)
         self.movie = CurvatureMovie(output_dim=output_dim)
         self.cyber = CyberCore(input_dim=input_dim, output_dim=output_dim)
         self.goal = AngelGoalModule()
-        self.sense = AngelSense(max_history=100, history_file="sense_history.pth")
+        self.sense = AngelSense(max_history=100, history_file=str(sense_history_file))
         self.cogni = CogniCore()
-        self.field_censor = TensorFieldCensor(output_dim=output_dim, num_classes=output_dim)
+        self.field_censor = TensorFieldCensor(
+            output_dim=output_dim,
+            num_classes=output_dim,
+            archive_dir=str(field_archive_dir),
+            ideal_fields_file=str(ideal_fields_file),
+        )
         
         self.stability = 0.0
         self.energy = 0.0
@@ -166,10 +199,9 @@ class AngelNet(nn.Module):
         
         local_curvature = self.movie.compute_curvature(output)
         self.movie.update(output, local_curvature)
-        resonance_vector = self.vector_map.get_resonance_vector()
         resonance_factor = self.vector_map.get_resonance_factor()
-        
-        self.goal.update(accuracy, success)
+
+        self.goal.update(accuracy, success, loss)
         reward = self.goal.get_reward()
         self.cogni.update(reward, success)
         mood_norm = self.cogni.mood_norm
@@ -293,4 +325,4 @@ class AngelNet(nn.Module):
         
         plt.tight_layout()
         plt.savefig(f'metrics_epoch_{epoch}.png')
-        plt.close()    
+        plt.close()
